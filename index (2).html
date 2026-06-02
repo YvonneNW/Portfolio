@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yvonne W. Nyangi — AI Governance, Regulatory Compliance, and Data Protection specialist.">
+  <title>Yvonne W. Nyangi — AI Governance</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --sidebar-bg:   #0d1117;
+      --accent:       #3ecf8e;
+      --accent-light: rgba(62, 207, 142, 0.12);
+      --accent-border:rgba(62, 207, 142, 0.30);
+      --green:        #0a6644;
+      --bg:           #f9fafb;
+      --white:        #ffffff;
+      --ink:          #111827;
+      --muted:        #6b7280;
+      --border:       #e5e7eb;
+      --serif:        'Instrument Serif', Georgia, serif;
+      --sans:         'Manrope', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      display: flex;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--ink);
+    }
+
+    /* ── SIDEBAR ──────────────────────────────────── */
+
+    .sidebar {
+      width: 260px;
+      flex-shrink: 0;
+      background: var(--sidebar-bg);
+      height: 100vh;
+      position: sticky;
+      top: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1.75rem;
+      overflow-y: auto;
+    }
+
+    /* Scrollbar styling inside sidebar */
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-track { background: transparent; }
+    .sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); border-radius: 2px; }
+
+    .avatar {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1.5px solid var(--accent);
+      margin-bottom: 1.25rem;
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--accent-light);
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--accent);
+    }
+
+    .avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .sidebar-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 0.35rem;
+    }
+
+    .sidebar-role {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.40);
+      line-height: 1.55;
+      margin-bottom: 1.1rem;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 1.4rem;
+    }
+
+    .tag {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+      padding: 2px 9px;
+      border-radius: 100px;
+    }
+
+    .sidebar-divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      margin-bottom: 1.1rem;
+    }
+
+    .sidebar-nav {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      margin-bottom: auto;
+    }
+
+    .sidebar-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.42);
+      text-decoration: none;
+      padding: 7px 8px;
+      border-radius: 6px;
+      transition: color 0.15s, background 0.15s;
+    }
+
+    .sidebar-nav a:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.18);
+      flex-shrink: 0;
+      transition: background 0.15s;
+    }
+
+    .sidebar-nav a:hover .nav-dot {
+      background: var(--accent);
+    }
+
+    .sidebar-footer {
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.32);
+      text-decoration: none;
+      margin-bottom: 8px;
+      word-break: break-all;
+      transition: color 0.15s;
+    }
+
+    .contact-link:hover { color: rgba(255, 255, 255, 0.70); }
+
+    .cv-btn {
+      display: block;
+      margin-top: 0.75rem;
+      padding: 9px;
+      background: var(--accent);
+      color: #0d1117;
+      text-align: center;
+      text-decoration: none;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-radius: 6px;
+      transition: opacity 0.15s;
+    }
+
+    .cv-btn:hover { opacity: 0.85; }
+
+    /* ── MAIN ─────────────────────────────────────── */
+
+    .main {
+      flex: 1;
+      min-width: 0;
+      padding: 3rem 4rem;
+      background: var(--bg);
+    }
+
+    .section {
+      margin-bottom: 3.5rem;
+      scroll-margin-top: 2rem;
+    }
+
+    .section-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 400;
+      color: var(--ink);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .section-heading em { font-style: italic; }
+
+    /* About */
+    .about-text {
+      font-size: 15px;
+      line-height: 1.85;
+      color: var(--muted);
+      max-width: 580px;
+    }
+
+    /* Experience */
+    .exp-list { display: flex; flex-direction: column; }
+
+    .exp-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 1.5rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .exp-item:first-child { border-top: 1px solid var(--border); }
+
+    .exp-org {
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .exp-period {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    .exp-role {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--green);
+      margin-bottom: 5px;
+    }
+
+    .exp-desc {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+
+    /* Projects */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .project-card:hover { border-color: rgba(62, 207, 142, 0.55); }
+
+    .project-num {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--border);
+      margin-bottom: 0.4rem;
+    }
+
+    .project-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: 0.4rem;
+      line-height: 1.35;
+    }
+
+    .project-desc {
+      font-size: 12.5px;
+      line-height: 1.65;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .project-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+
+    .project-tag {
+      font-size: 10.5px;
+      font-weight: 500;
+      color: var(--green);
+      background: #f0fdf4;
+      padding: 2px 9px;
+      border-radius: 100px;
+    }
+
+    /* Research */
+    .paper-item {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--border);
+      cursor: default;
+    }
+
+    .paper-item:first-child { border-top: 1px solid var(--border); }
+
+    .paper-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--ink);
+      margin-bottom: 4px;
+    }
+
+    .paper-subtitle {
+      font-size: 12.5px;
+      color: var(--muted);
+      font-style: italic;
+      line-height: 1.45;
+    }
+
+    .paper-arrow {
+      color: var(--muted);
+      flex-shrink: 0;
+      margin-top: 4px;
+      font-size: 1rem;
+      transition: transform 0.15s, color 0.15s;
+    }
+
+    .paper-item:hover .paper-arrow {
+      transform: translateX(5px);
+      color: var(--green);
+    }
+
+    /* Contact */
+    .contact-intro {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+      max-width: 500px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 1rem;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      transition: border-color 0.15s;
+    }
+
+    .contact-card:hover { border-color: rgba(62, 207, 142, 0.55); }
+
+    .contact-icon {
+      width: 36px;
+      height: 36px;
+      background: #f0fdf4;
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--green);
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+
+    .contact-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .contact-value {
+      font-size: 11px;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────── */
+
+    @media (max-width: 860px) {
+      body { flex-direction: column; }
+
+      .sidebar {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 1.25rem 1.5rem;
+        overflow: visible;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+        margin-bottom: 0;
+      }
+
+      .main {
+        padding: 2rem 1.5rem;
+      }
+
+      .exp-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .section-heading { font-size: 1.75rem; }
+
+      .projects-grid { grid-template-columns: 1fr; }
+
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── SIDEBAR ─────────────────────────────────────── -->
+<aside class="sidebar">
+
+  <div class="avatar" id="avatar">
+    <img
+      src="profile.jpg"
+      alt="Yvonne W. Nyangi"
+      onerror="this.remove(); document.getElementById('avatar').textContent='YN';"
+    >
+  </div>
+
+  <div class="sidebar-name">Yvonne W.<br>Nyangi</div>
+  <div class="sidebar-role">LL.M International Economic Law<br>Founder, Sensol Limited</div>
+
+  <div class="tag-row">
+    <span class="tag">EU AI Act</span>
+    <span class="tag">GDPR</span>
+    <span class="tag">AI Risk</span>
+  </div>
+
+  <hr class="sidebar-divider">
+
+  <nav aria-label="Page sections">
+    <ul class="sidebar-nav">
+      <li><a href="#about"><span class="nav-dot"></span>About</a></li>
+      <li><a href="#experience"><span class="nav-dot"></span>Experience</a></li>
+      <li><a href="#projects"><span class="nav-dot"></span>Projects</a></li>
+      <li><a href="#research"><span class="nav-dot"></span>Research</a></li>
+      <li><a href="#contact"><span class="nav-dot"></span>Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="sidebar-footer">
+    <a href="mailto:nyangiwyvonne@gmail.com" class="contact-link">
+      ✉&nbsp; nyangiwyvonne@gmail.com
+    </a>
+    <a href="https://www.linkedin.com/in/yvonne-nyangi-21a4813b8/" target="_blank" rel="noopener" class="contact-link">
+      in&nbsp; LinkedIn Profile
+    </a>
+    <a href="Yvonne_Nyangi_CV.pdf" download class="cv-btn">↓ Download CV</a>
+  </div>
+
+</aside>
+
+<!-- ─── MAIN CONTENT ────────────────────────────────── -->
+<main class="main">
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="section-label">About</div>
+    <h1 class="section-heading">Helping organisations deploy <em>AI responsibly.</em></h1>
+    <p class="about-text">
+      An AI governance and regulatory compliance professional with expertise in EU AI Act compliance,
+      GDPR, AI risk management, and legal technology. With an LL.M in International Economic Law,
+      I bridge the gap between complex regulatory requirements and practical implementation —
+      helping organisations navigate the evolving AI landscape with confidence.
+    </p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section" id="experience">
+    <div class="section-label">Experience</div>
+    <div class="exp-list">
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Sensol Limited</div>
+          <div class="exp-period">Present</div>
+        </div>
+        <div>
+          <div class="exp-role">Founder &amp; CEO</div>
+          <div class="exp-desc">
+            Founded an AI-powered SaaS platform supporting EHCP and ISP automation.
+            Leads product strategy, regulatory alignment, and compliance tooling for
+            organisations working with vulnerable populations.
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Commonwealth Secretariat</div>
+          <div class="exp-period">Previous</div>
+        </div>
+        <div>
+          <div class="exp-role">Legal Advisory Intern</div>
+          <div class="exp-desc">
+            Contributed to constitutional law analysis, data governance frameworks, and
+            regulatory policy work spanning multiple Commonwealth member states.
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div>
+          <div class="exp-org">Clifford Chance</div>
+          <div class="exp-period">Previous</div>
+        </div>
+        <div>
+          <div class="exp-role">Risk &amp; Resilience Intern</div>
+          <div class="exp-desc">
+            Supported compliance and GDPR initiatives within the Risk and Resilience team
+            at one of the world's leading law firms. Built a strong foundation in
+            enterprise-level data protection and regulatory risk management.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="section-label">Projects</div>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-num">01</div>
+        <div class="project-name">EU AI Act Compliance Framework</div>
+        <div class="project-desc">
+          Practical framework for high-risk AI system deployment: conformity assessments,
+          risk classification, and documentation requirements.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Regulatory</span>
+          <span class="project-tag">Compliance</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">02</div>
+        <div class="project-name">GDPR DPIA Toolkit</div>
+        <div class="project-desc">
+          Templates and guidance for Data Protection Impact Assessments,
+          accessible to legal and non-legal practitioners alike.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Data Protection</span>
+          <span class="project-tag">GDPR</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-num">03</div>
+        <div class="project-name">AI Risk Assessment Framework</div>
+        <div class="project-desc">
+          Risk scoring methodologies and governance structures for the systematic
+          identification and mitigation of AI-related risks.
+        </div>
+        <div class="project-tags">
+          <span class="project-tag">Governance</span>
+          <span class="project-tag">Risk</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="section" id="research">
+    <div class="section-label">Research</div>
+    <div>
+
+      <div class="paper-item">
+        <div>
+          <div class="paper-title">The Uncanny Valley</div>
+          <div class="paper-subtitle">Predictive Analytics and the Decision Point Dilemma in Child Welfare</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+
+      <div class="paper-item">
+        <div>
+          <div class="paper-title">The Asymmetry of Power</div>
+          <div class="paper-subtitle">AI-Driven Migration Management and the Global South</div>
+        </div>
+        <div class="paper-arrow">→</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="section-label">Contact</div>
+    <div class="contact-grid">
+
+      <a href="mailto:nyangiwyvonne@gmail.com" class="contact-card">
+        <div class="contact-icon">✉</div>
+        <div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">nyangiwyvonne@gmail.com</div>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/yvonne-nyangi-21a4813b8/" target="_blank" rel="noopener" class="contact-card">
+        <div class="contact-icon">in</div>
+        <div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">yvonne-nyangi</div>
+        </div>
+      </a>
+
+      <a href="Yvonne_Nyangi_CV.pdf" download class="contact-card">
+        <div class="contact-icon">↓</div>
+        <div>
+          <div class="contact-label">Download CV</div>
+          <div class="contact-value">PDF Resume</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
